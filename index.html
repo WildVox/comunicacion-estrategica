@@ -208,8 +208,9 @@ section.slide { padding-block: clamp(64px, 10vw, 128px); }
 
 /* ---------- Qué hacemos ---------- */
 .callout {
-  font-family: var(--f-serif); font-size: var(--step-2); line-height: 1.2; max-width: 30ch; color: var(--green);
+  font-family: var(--f-serif); font-size: var(--step-2); line-height: 1.2; color: var(--green); text-wrap: balance;
 }
+#que h2 { text-wrap: pretty; }
 .silos { display: grid; gap: 10px; margin-top: 8px; }
 .silo {
   display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 12px 20px;
@@ -331,7 +332,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   margin-top: clamp(28px, 4vw, 44px); padding-top: clamp(22px, 3vw, 32px); border-top: 1px solid var(--line);
   font-size: var(--step-1); line-height: 1.5;
 }
-.intro-text p { max-width: 72ch; }
+.intro-text p { max-width: none; }
 
 /* ---------- Fotos (Pexels) ----------
    Tratamiento: blanco y negro teñido con los colores de marca + granulado (manual Wild). */
@@ -354,10 +355,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 #que > .wrap { position: relative; z-index: 1; }
 .bg-photo.top { bottom: auto; height: min(820px, 75%); }
 .bg-photo.top img {
-  mix-blend-mode: multiply; opacity: .28; object-position: 70% center;
-  -webkit-mask-image: linear-gradient(to left, #000 30%, transparent 85%), linear-gradient(to bottom, #000 55%, transparent 100%);
+  mix-blend-mode: multiply; opacity: .5; object-position: 70% center;
+  -webkit-mask-image: linear-gradient(to left, #000 45%, transparent 100%), linear-gradient(to bottom, #000 65%, transparent 100%);
   -webkit-mask-composite: source-in;
-          mask-image: linear-gradient(to left, #000 30%, transparent 85%), linear-gradient(to bottom, #000 55%, transparent 100%);
+          mask-image: linear-gradient(to left, #000 45%, transparent 100%), linear-gradient(to bottom, #000 65%, transparent 100%);
           mask-composite: intersect;
 }
 .bg-photo.top { background: transparent; }
