@@ -350,6 +350,18 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 .img-off { display: none !important; }
+#que { position: relative; overflow: hidden; }
+#que > .wrap { position: relative; z-index: 1; }
+.bg-photo.top { bottom: auto; height: min(820px, 75%); }
+.bg-photo.top img {
+  mix-blend-mode: multiply; opacity: .28; object-position: 70% center;
+  -webkit-mask-image: linear-gradient(to left, #000 30%, transparent 85%), linear-gradient(to bottom, #000 55%, transparent 100%);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(to left, #000 30%, transparent 85%), linear-gradient(to bottom, #000 55%, transparent 100%);
+          mask-composite: intersect;
+}
+.bg-photo.top { background: transparent; }
+
 .hero, .slide.dark { position: relative; overflow: hidden; }
 .hero > .wrap, .slide.dark > .wrap { position: relative; z-index: 1; }
 
@@ -358,7 +370,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 .duo.blush { background: var(--blush); }
 .duo.wis { background: var(--wisteria); }
 
-.intro-row { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
+.intro-row { display: block; }
 .intro-row .duo { aspect-ratio: 4 / 3; }
 .band { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-bottom: clamp(28px, 5vw, 48px); }
 .band .duo { aspect-ratio: 16 / 9; }
@@ -481,6 +493,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 
 <!-- ===================== QUÉ HACEMOS ===================== -->
 <section class="slide" id="que">
+  <!-- Foto de fondo (Pexels 8846035) -->
+  <div class="bg-photo top" aria-hidden="true"><img src="https://images.pexels.com/photos/8846035/pexels-photo-8846035.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800" alt="" loading="lazy" onerror="this.parentNode.classList.add('img-off')"></div>
   <div class="wrap">
     <div class="slide-head">
       <p class="eyebrow">Qué hacemos</p>
@@ -488,8 +502,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     </div>
     <div class="intro-row">
       <p class="callout">Cada área de tu empresa genera conocimiento, datos y experiencias que otras áreas necesitan.</p>
-      <!-- Foto (Pexels 8846035) -->
-      <figure class="duo"><img src="https://images.pexels.com/photos/8846035/pexels-photo-8846035.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1000" alt="Megáfono retro sobre una silla" loading="lazy" onerror="this.parentNode.classList.add('img-off')"></figure>
     </div>
 
     <div class="intro-text">
