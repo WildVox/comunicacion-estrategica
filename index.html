@@ -328,11 +328,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 
 
 .intro-text {
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px clamp(28px, 5vw, 64px);
+  max-width: 72ch;
   margin-top: clamp(28px, 4vw, 44px); padding-top: clamp(22px, 3vw, 32px); border-top: 1px solid var(--line);
   font-size: var(--step-1); line-height: 1.5;
 }
-@media (max-width: 760px) { .intro-text { grid-template-columns: 1fr; } }
 
 /* ---------- Fotos (Pexels) ----------
    Tratamiento: blanco y negro teñido con los colores de marca + granulado (manual Wild). */
@@ -494,7 +493,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     </div>
 
     <div class="intro-text">
-      <p>En una empresa, cada área genera permanentemente conocimiento, datos, experiencias e información que son relevantes para otras áreas y también para públicos externos.</p>
       <p>La propuesta parte de entender la comunicación no solo como una habilidad o un conjunto de canales, sino como un <strong>sistema de circulación de información</strong> dentro de la organización, que bien gestionado se convierte en un activo estratégico.</p>
     </div>
 
