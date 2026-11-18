@@ -212,20 +212,6 @@ section.slide { padding-block: clamp(64px, 10vw, 128px); }
   font-family: var(--f-serif); font-size: var(--step-2); line-height: 1.2; color: var(--green); text-wrap: balance;
 }
 #que h2 { text-wrap: pretty; }
-.silos { display: grid; gap: 10px; margin-top: 8px; }
-.silo {
-  display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 12px 20px;
-  padding: 14px 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
-}
-.tag {
-  font-size: var(--step--1); font-weight: 700; font-stretch: 112%; padding: 4px 12px; border-radius: 99px;
-  background: var(--mint); color: var(--ink); white-space: nowrap;
-}
-.tag.b { background: var(--blush); }
-.gap-mark { display: inline-flex; align-items: center; gap: 2px; color: var(--coral); font-weight: 900; letter-spacing: -.1em; }
-.silo .pair { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.silo p { color: var(--ink-soft); font-size: var(--step--1); }
-
 .subhead { font-size: var(--step-1); font-weight: 700; font-stretch: 112%; margin: clamp(40px, 6vw, 64px) 0 18px; }
 
 /* ---------- Productos ---------- */
@@ -398,7 +384,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   .product-body { padding-left: clamp(18px, 3vw, 30px); }
   .product > summary { grid-template-columns: minmax(0, 1fr) auto; }
   .product .num { grid-column: 1 / -1; font-size: var(--step-2); }
-  .silo { grid-template-columns: 1fr; }
 }
 @media (max-width: 420px) {
   .bani { grid-template-columns: 1fr; }
@@ -515,27 +500,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <div class="intro-text">
       <p>La propuesta parte de entender la comunicación no solo como una habilidad o un conjunto de canales, sino como un <strong>sistema de circulación de información</strong> dentro de la organización, que bien gestionado se convierte en un activo estratégico.</p>
     </div>
-
-    <h3 class="subhead">¿Qué problemas resuelve? Muchas veces esa información queda encapsulada.</h3>
-    <div class="silos">
-      <div class="silo">
-        <span class="pair"><span class="tag">Comercial</span><span class="gap-mark" aria-label="no se conecta con">–/–</span><span class="tag b">Producto</span></span>
-        <p>Comercial desconoce lo que está desarrollando Producto.</p>
-      </div>
-      <div class="silo">
-        <span class="pair"><span class="tag">Marketing</span><span class="gap-mark" aria-label="no se conecta con">–/–</span><span class="tag b">Atención al Cliente</span></span>
-        <p>Marketing no accede a información que surge de Atención al Cliente.</p>
-      </div>
-      <div class="silo">
-        <span class="pair"><span class="tag">Comunicación</span><span class="gap-mark" aria-label="no se conecta con">–/–</span><span class="tag b">Negocio</span></span>
-        <p>Comunicación desconoce tendencias o casos detectados por el negocio.</p>
-      </div>
-      <div class="silo">
-        <span class="pair"><span class="tag">RRHH</span><span class="gap-mark" aria-label="no se conecta con">–/–</span><span class="tag b">Cultura y marca empleadora</span></span>
-        <p>RRHH no tiene visibilidad sobre experiencias que podrían fortalecer la cultura y la marca empleadora.</p>
-      </div>
-    </div>
-    <p class="cite" style="color:var(--ink-soft)">Entre otras problemáticas más complejas y particulares de cada organización.</p>
   </div>
 </section>
 
