@@ -203,9 +203,9 @@ section.slide { padding-block: clamp(64px, 10vw, 128px); }
   margin-top: clamp(48px, 7vw, 80px); display: grid; gap: 18px;
   border-top: 1px solid rgba(255, 247, 242, .2); padding-top: clamp(32px, 5vw, 52px);
 }
-.thesis p.big { font-family: var(--f-display); font-weight: 700; font-stretch: 112%; font-size: var(--step-2); line-height: 1.15; max-width: 26ch; text-wrap: balance; }
+.thesis p.big { font-family: var(--f-display); font-weight: 700; font-stretch: 112%; font-size: var(--step-2); line-height: 1.15; text-wrap: balance; }
 .thesis p.big em { font-style: normal; color: var(--blush); }
-.thesis p.sub { max-width: 52ch; opacity: .85; }
+.thesis p.sub { opacity: .85; }
 
 /* ---------- Qué hacemos ---------- */
 .callout {
@@ -229,6 +229,7 @@ section.slide { padding-block: clamp(64px, 10vw, 128px); }
 .subhead { font-size: var(--step-1); font-weight: 700; font-stretch: 112%; margin: clamp(40px, 6vw, 64px) 0 18px; }
 
 /* ---------- Productos ---------- */
+.services-note { font-size: var(--step-1); color: var(--ink-soft); max-width: 60ch; }
 .products { display: grid; gap: 12px; }
 .product {
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
@@ -244,8 +245,13 @@ section.slide { padding-block: clamp(64px, 10vw, 128px); }
 .product > summary::-webkit-details-marker { display: none; }
 .product .num {
   font-family: var(--f-serif); font-size: var(--step-3); line-height: 1; color: var(--green);
-  min-width: 1.4ch;
+  min-width: 1.4ch; align-self: start; padding-top: .1em;
 }
+.product:nth-child(4n+1) .num { color: var(--coral); }
+.product:nth-child(4n+2) .num { color: var(--green); }
+.product:nth-child(4n+3) .num { color: #9A63AD; }
+.product:nth-child(4n+4) .num { color: var(--brick); }
+.product.custom .num { color: var(--wisteria) !important; }
 .product .titles { display: grid; gap: 4px; min-width: 0; }
 .product h3 { font-size: var(--step-1); }
 .product .hook { color: var(--ink-soft); }
@@ -281,7 +287,7 @@ ul.clean li::before {
   content: "*"; position: absolute; left: 0; top: -.05em;
   font-family: var(--f-serif); color: var(--coral); font-size: 1.15em;
 }
-.cols-2 { display: block; columns: 2 260px; column-gap: 40px; }
+ul.clean.cols-2 { display: block; columns: 2 260px; column-gap: 40px; }
 .cols-2 li { break-inside: avoid; margin-bottom: 8px; }
 .list-label { font-weight: 700; margin-bottom: 6px; }
 
@@ -439,7 +445,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <h1>Wild Vox<span class="ast">*</span></h1>
     <p class="slogan">Potenciá lo mejor de tu empresa.</p>
     <div class="hero-foot">
-      <p class="lead">La comunicación como activo estratégico. Una alianza entre Wild Consultora y Vox – Estrategias de Comunicación.</p>
+      <p class="lead">La comunicación como activo estratégico.</p>
       <a class="btn" href="#porque">Conocé la propuesta
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </a>
@@ -534,7 +540,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 </section>
 
 <!-- ===================== CÓMO LO HACEMOS (PRODUCTOS) =====================
-     Cada producto es un bloque <details class="product">.
+     Cada servicio es un bloque <details class="product">. No tienen orden: se contratan por separado o combinados.
      - Lo que está en <summary> se ve siempre (número, título, frase, chip).
      - Lo que está en <div class="product-body"> se ve al hacer clic.
      ====================================================================== -->
@@ -543,6 +549,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <div class="slide-head">
       <p class="eyebrow">Cómo lo hacemos</p>
       <h2>Metodología</h2>
+      <p class="services-note">Cada servicio se puede contratar por separado o combinar con otros, según lo que necesite tu empresa.</p>
     </div>
 
     <!-- Franja de fotos (Pexels 4106707 y 8015666) -->
@@ -553,13 +560,13 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 
     <div class="products">
 
-      <!-- ===== PRODUCTO 1 ===== -->
+      <!-- ===== SERVICIO: DIAGNÓSTICO 360° ===== -->
       <details class="product">
         <summary>
-          <span class="num">1</span>
+          <span class="num" aria-hidden="true">*</span>
           <div class="titles">
             <h3>Diagnóstico 360° de Comunicación</h3>
-            <span class="hook">El punto de partida para saber dónde estamos parados y definir cómo seguir.</span>
+            <span class="hook">Conocé en profundidad cómo está tu empresa en comunicación: como habilidad, como herramienta y como estrategia.</span>
             <span class="chip">2 a 4 semanas</span>
           </div>
           <span class="plus" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
@@ -614,10 +621,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         </div>
       </details>
 
-      <!-- ===== PRODUCTO 2 ===== -->
+      <!-- ===== SERVICIO: ESCUELA DE LÍDERES ===== -->
       <details class="product">
         <summary>
-          <span class="num">2</span>
+          <span class="num" aria-hidden="true">*</span>
           <div class="titles">
             <h3>Escuela de Comunicación para Líderes y Agentes de Comunicación</h3>
             <span class="hook">La comunicación no es un talento innato: se entrena como competencia de liderazgo.</span>
@@ -669,10 +676,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         </div>
       </details>
 
-      <!-- ===== PRODUCTO 3 ===== -->
+      <!-- ===== SERVICIO: LABORATORIO ===== -->
       <details class="product">
         <summary>
-          <span class="num">3</span>
+          <span class="num" aria-hidden="true">*</span>
           <div class="titles">
             <h3>Laboratorio de Soluciones Integradas</h3>
             <span class="hook">Áreas que trabajan en silos resuelven juntas un problema real del negocio.</span>
@@ -728,10 +735,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         </div>
       </details>
 
-      <!-- ===== PRODUCTO 4 ===== -->
+      <!-- ===== SERVICIO: ARQUITECTURA DE CANALES ===== -->
       <details class="product">
         <summary>
-          <span class="num">4</span>
+          <span class="num" aria-hidden="true">*</span>
           <div class="titles">
             <h3>Arquitectura de Canales</h3>
             <span class="hook">Qué se comunica, por qué canal y con qué frecuencia. Menos ruido, más efectividad.</span>
@@ -782,10 +789,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         </div>
       </details>
 
-      <!-- ===== PRODUCTO 5 ===== -->
+      <!-- ===== SERVICIO: MARCA EMPLEADORA ===== -->
       <details class="product">
         <summary>
-          <span class="num">5</span>
+          <span class="num" aria-hidden="true">*</span>
           <div class="titles">
             <h3>Comunicación &amp; Marca Empleadora</h3>
             <span class="hook">Acortar la distancia entre lo que la empresa es, lo que se vive adentro y lo que cuenta afuera.</span>
@@ -835,10 +842,72 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         </div>
       </details>
 
-      <!-- ===== PRODUCTO 6 ===== -->
+      <!-- ===== SERVICIO: GESTIÓN DE CRISIS ===== -->
+      <details class="product">
+        <summary>
+          <span class="num" aria-hidden="true">*</span>
+          <div class="titles">
+            <h3>Gestión de Crisis y Comunicación en Momentos Críticos</h3>
+            <span class="hook">Comunicar en momentos de alta incertidumbre sin quebrar la confianza de los equipos ni generar inconsistencias hacia afuera.</span>
+            <span class="chip">A demanda · Alta confidencialidad</span>
+          </div>
+          <span class="plus" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="product-body">
+          <div class="prose">
+            <p>Acompañamiento específico para comunicar durante <strong>reestructuraciones, fusiones, cambios de liderazgo, desvinculaciones, crisis reputacionales</strong> u otras situaciones sensibles.</p>
+            <p>Tomamos la crisis como un problema de cómo circula la información dentro de la empresa, no solo de qué se dice afuera. Wild aporta el análisis de procesos, las encuestas y las entrevistas. Vox aporta la experiencia en comunicación y medios.</p>
+          </div>
+          <div class="solves">
+            <p class="eyebrow">Problema que resuelve</p>
+            <p>En momentos críticos, RRHH y Comunicación necesitan trabajar bajo una misma estrategia. Evita que los empleados conozcan una decisión por los medios, que Atención al Cliente no sepa qué responder frente a algo comunicado públicamente o que distintos líderes transmitan versiones contradictorias. Permite sostener una única estrategia con mensajes adaptados a cada público.</p>
+          </div>
+          <div class="facts">
+            <div class="fact span">
+              <p class="eyebrow">Temas incluidos</p>
+              <ul class="clean cols-2">
+                <li>Diseño del mensaje y timing: qué se dice, cuándo, en qué orden y a quién.</li>
+                <li>Mapa de stakeholders internos y externos.</li>
+                <li>Secuencia de comunicación: empleados, managers, clientes, proveedores, partners, medios y otros públicos.</li>
+                <li>Mensajes diferenciados según audiencia.</li>
+                <li>Preparación de los líderes que deben comunicar la noticia.</li>
+                <li>Gestión de la incertidumbre y de las comunicaciones informales mientras el proceso está en curso.</li>
+                <li>Q&amp;A interno y externo.</li>
+                <li>Preparación de voceros y media training.</li>
+                <li>Protocolo frente a consultas periodísticas.</li>
+                <li>Escenarios de filtración de información.</li>
+                <li>Monitoreo de medios y de la conversación pública.</li>
+                <li>Alineación entre discurso interno y externo.</li>
+                <li>Comunicación post-crisis y reconstrucción de la confianza.</li>
+                <li>Acompañamiento a los equipos de alto liderazgo durante todo el proceso.</li>
+              </ul>
+            </div>
+            <div class="fact span">
+              <p class="eyebrow">Módulo de gestión de crisis para el management</p>
+              <p class="list-label">Para empresas que atravesaron una crisis o quieren estar preparadas, en cuatro etapas:</p>
+              <ul class="clean">
+                <li><strong>Diagnóstico de la crisis reciente.</strong> Reconstruimos qué pasó desde adentro, con entrevistas a las áreas involucradas (dirección, tecnología, atención al cliente, marketing) y una encuesta breve a los equipos: quién se enteró primero, cómo llegó la información a cada área, quién decidió qué, dónde se trabó y qué funcionó bien. Entregable: mapa de circulación de la información durante la crisis.</li>
+                <li><strong>Protocolo interno de gestión de crisis.</strong> Comité de crisis y rol de cada integrante, niveles de gravedad y qué se activa en cada uno, circuito de escalamiento y toma de decisiones (incluida la relación con la casa matriz o los accionistas, si corresponde), canales internos y quién avisa a quién, y voceros autorizados.</li>
+                <li><strong>Kit de comunicación externa.</strong> Mensajes clave y plantillas: mail a clientes, posteo en redes, preguntas frecuentes para Atención al Cliente y respuesta a periodistas. Es el insumo para la agencia de prensa y para Atención al Cliente.</li>
+                <li><strong>Simulacro.</strong> Basado en el Laboratorio de Soluciones Integradas: un grupo de distintas áreas resuelve una crisis simulada usando el protocolo, que después se ajusta con lo que surja del taller.</li>
+              </ul>
+            </div>
+            <div class="fact">
+              <p class="eyebrow">Metodología</p>
+              <p>Acompañamiento puntual e intensivo durante el proceso, a demanda. Incluye preparación de voceros y líderes, mensajes, guiones, Q&amp;A y estrategia de comunicación interna y externa. Alta confidencialidad.</p>
+            </div>
+            <div class="fact">
+              <p class="eyebrow">Para quién</p>
+              <p>Dirección General, RRHH y Comunicación durante reestructuraciones, fusiones, cambios de liderazgo, desvinculaciones sensibles o situaciones con potencial impacto reputacional.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- ===== SERVICIO: SOLUCIONES A MEDIDA ===== -->
       <details class="product custom">
         <summary>
-          <span class="num">6</span>
+          <span class="num" aria-hidden="true">*</span>
           <div class="titles">
             <h3>Soluciones a medida</h3>
             <span class="hook">Conociendo tu empresa, hacemos un mix y aplicamos lo que necesite.</span>
@@ -847,7 +916,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         </summary>
         <div class="product-body">
           <div class="prose">
-            <p>Cada organización tiene su cultura, su momento y sus problemáticas. Por eso combinamos los productos en el orden y la intensidad que tu empresa necesite. Siempre partimos de una conversación.</p>
+            <p>Cada organización tiene su cultura, su momento y sus problemáticas. Por eso combinamos los servicios en la intensidad que tu empresa necesite. Siempre partimos de una conversación.</p>
           </div>
           <div class="facts">
             <div class="fact span">
@@ -855,7 +924,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
               <ol class="steps">
                 <li><span><strong>Escuchamos:</strong> una primera conversación con Dirección, RRHH o Comunicación.</span></li>
                 <li><span><strong>Diagnosticamos:</strong> con el Diagnóstico 360° completo o con un relevamiento más corto.</span></li>
-                <li><span><strong>Combinamos:</strong> qué productos aplicar, en qué orden y con qué equipos.</span></li>
+                <li><span><strong>Combinamos:</strong> qué servicios aplicar y con qué equipos.</span></li>
                 <li><span><strong>Acompañamos:</strong> seguimos la implementación para que los cambios queden instalados.</span></li>
               </ol>
             </div>
